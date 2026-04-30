@@ -52,7 +52,6 @@ header {
   position: relative;
 }
 
-/* Red accent bar at bottom of header */
 header::after {
   content: '';
   position: absolute;
@@ -139,11 +138,22 @@ main {
   box-shadow: var(--shadow-hover);
 }
 
-/* ---- Avatar circle with initials ---- */
+/* ---- Photo avatar (when photo exists) ---- */
+.avatar-photo {
+  flex-shrink: 0;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 2px solid var(--border);
+}
+
+/* ---- Initials avatar (fallback when no photo) ---- */
 .avatar {
   flex-shrink: 0;
-  width: 58px;
-  height: 58px;
+  width: 62px;
+  height: 62px;
   border-radius: 50%;
   background: var(--navy);
   color: var(--white);
@@ -167,9 +177,6 @@ main {
   font-weight: 700;
   color: var(--navy);
   margin-bottom: 0.2rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .role {
@@ -211,7 +218,21 @@ main {
   transform: translateY(0);
 }
 
-/* Secondary CTA — LinkedIn / Portfolio (hidden until uncommented in HTML) */
+/* Coming Soon badge */
+.btn-coming-soon {
+  display: inline-block;
+  background: #E8EBF0;
+  color: #8A93A6;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.48rem 1rem;
+  border-radius: 6px;
+  white-space: nowrap;
+  cursor: default;
+  user-select: none;
+}
+
+/* Secondary CTA — LinkedIn / Portfolio */
 .btn-secondary {
   display: inline-block;
   background: transparent;
@@ -243,7 +264,7 @@ footer {
   line-height: 1.8;
 }
 
-/* ---- Accessibility: visible focus ring ---- */
+/* ---- Accessibility ---- */
 a:focus-visible {
   outline: 3px solid var(--red);
   outline-offset: 3px;
@@ -254,9 +275,6 @@ a:focus-visible {
    RESPONSIVE
 ============================================================ */
 
-/* Tablet: 2 columns already handled by auto-fit */
-
-/* Mobile: single column, card stacks vertically */
 @media (max-width: 480px) {
   header {
     padding: 2rem 1rem 2.5rem;
@@ -270,7 +288,6 @@ a:focus-visible {
     grid-template-columns: 1fr;
   }
 
-  /* Stack avatar above text on very small screens */
   .card {
     flex-direction: column;
     align-items: flex-start;
@@ -278,12 +295,9 @@ a:focus-visible {
     padding: 1.4rem 1.2rem;
   }
 
-  .card-body h2 {
-    white-space: normal;
-  }
-
   .btn-primary,
-  .btn-secondary {
+  .btn-secondary,
+  .btn-coming-soon {
     font-size: 0.95rem;
     padding: 0.65rem 1.25rem;
   }

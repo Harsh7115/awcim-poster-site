@@ -9,9 +9,6 @@
 </head>
 <body>
 
-  <!-- ============================================================
-       HEADER
-  ============================================================ -->
   <header>
     <div class="header-inner">
       <span class="org-badge">Andrew Weil Center for Integrative Medicine &times; Eller</span>
@@ -20,9 +17,6 @@
     </div>
   </header>
 
-  <!-- ============================================================
-       MAIN CONTENT
-  ============================================================ -->
   <main>
 
     <p class="intro">
@@ -32,35 +26,35 @@
 
     <!-- ============================================================
          TEAM CARDS
-         To update a resume link: change the href on the "View Resume" button.
-         To update a role/title: change the text inside <p class="role">.
-         To add a LinkedIn or portfolio link: uncomment the .btn-secondary
-         block inside the card and replace the href with the correct URL.
+         Folder structure: team/<name>/photo.jpg + team/<name>/resume.pdf
+         To add a photo: place photo.jpg inside the person's team folder.
+         To add a resume: place resume.pdf and swap btn-coming-soon → btn-primary.
+         To add LinkedIn: uncomment the .btn-secondary block and update href.
     ============================================================ -->
     <section class="team-grid" aria-label="Team members">
 
       <!-- CARD: Harsh Jain -->
       <article class="card">
-        <div class="avatar" aria-hidden="true">HJ</div>
+        <img
+          src="team/harsh-jain/photo.jpg"
+          alt="Harsh Jain"
+          class="avatar-photo"
+        />
         <div class="card-body">
           <h2>Harsh Jain</h2>
-          <!-- Update role/title below -->
           <p class="role">MIS Student &mdash; Eller College of Management</p>
           <div class="btn-group">
-            <!-- Update resume path below if filename changes -->
-            <a href="resumes/harsh-jain-resume.pdf"
+            <a href="team/harsh-jain/resume.pdf"
                class="btn-primary"
                target="_blank"
                rel="noopener noreferrer">
               View Resume
             </a>
-            <!-- Uncomment and update href to add LinkedIn or portfolio:
+            <!--
             <a href="https://linkedin.com/in/HARSH-USERNAME"
                class="btn-secondary"
                target="_blank"
-               rel="noopener noreferrer">
-              LinkedIn
-            </a>
+               rel="noopener noreferrer">LinkedIn</a>
             -->
           </div>
         </div>
@@ -68,12 +62,16 @@
 
       <!-- CARD: Anirudha Soni -->
       <article class="card">
-        <div class="avatar" aria-hidden="true">AS</div>
+        <img
+          src="team/anirudha-soni/photo.jpg"
+          alt="Anirudha Soni"
+          class="avatar-photo"
+        />
         <div class="card-body">
           <h2>Anirudha Soni</h2>
           <p class="role">MIS Student &mdash; Eller College of Management</p>
           <div class="btn-group">
-            <a href="resumes/anirudha-soni-resume.pdf"
+            <a href="team/anirudha-soni/resume.pdf"
                class="btn-primary"
                target="_blank"
                rel="noopener noreferrer">
@@ -83,59 +81,53 @@
             <a href="https://linkedin.com/in/ANIRUDHA-USERNAME"
                class="btn-secondary"
                target="_blank"
-               rel="noopener noreferrer">
-              LinkedIn
-            </a>
+               rel="noopener noreferrer">LinkedIn</a>
             -->
           </div>
         </div>
       </article>
 
-      <!-- CARD: Rajesh Tummalapalli -->
+      <!-- CARD: Rajesh Tummalapalli — resume coming soon -->
+      <!-- When resume is ready: add resume.pdf to team/rajesh-tummalapalli/ and swap btn-coming-soon → btn-primary with correct href -->
       <article class="card">
         <div class="avatar" aria-hidden="true">RT</div>
         <div class="card-body">
           <h2>Rajesh Tummalapalli</h2>
           <p class="role">MIS Student &mdash; Eller College of Management</p>
           <div class="btn-group">
-            <a href="resumes/rajesh-tummalapalli-resume.pdf"
+            <span class="btn-coming-soon" aria-label="Resume coming soon">Coming Soon</span>
+            <!--
+            <a href="team/rajesh-tummalapalli/resume.pdf"
                class="btn-primary"
                target="_blank"
-               rel="noopener noreferrer">
-              View Resume
-            </a>
-            <!--
+               rel="noopener noreferrer">View Resume</a>
             <a href="https://linkedin.com/in/RAJESH-USERNAME"
                class="btn-secondary"
                target="_blank"
-               rel="noopener noreferrer">
-              LinkedIn
-            </a>
+               rel="noopener noreferrer">LinkedIn</a>
             -->
           </div>
         </div>
       </article>
 
-      <!-- CARD: Shri Pooja Challagulla -->
+      <!-- CARD: Shri Pooja Challagulla — resume coming soon -->
+      <!-- When resume is ready: add resume.pdf to team/shri-pooja-challagulla/ and swap btn-coming-soon → btn-primary with correct href -->
       <article class="card">
         <div class="avatar" aria-hidden="true">SPC</div>
         <div class="card-body">
           <h2>Shri Pooja Challagulla</h2>
           <p class="role">MIS Student &mdash; Eller College of Management</p>
           <div class="btn-group">
-            <a href="resumes/shri-pooja-challagulla-resume.pdf"
+            <span class="btn-coming-soon" aria-label="Resume coming soon">Coming Soon</span>
+            <!--
+            <a href="team/shri-pooja-challagulla/resume.pdf"
                class="btn-primary"
                target="_blank"
-               rel="noopener noreferrer">
-              View Resume
-            </a>
-            <!--
+               rel="noopener noreferrer">View Resume</a>
             <a href="https://linkedin.com/in/SHRIPOOJA-USERNAME"
                class="btn-secondary"
                target="_blank"
-               rel="noopener noreferrer">
-              LinkedIn
-            </a>
+               rel="noopener noreferrer">LinkedIn</a>
             -->
           </div>
         </div>
@@ -144,9 +136,6 @@
     </section>
   </main>
 
-  <!-- ============================================================
-       FOOTER
-  ============================================================ -->
   <footer>
     <p>Information Navigator &mdash; Spring 2026</p>
     <p>Andrew Weil Center for Integrative Medicine &times; Eller College of Management, University of Arizona</p>
