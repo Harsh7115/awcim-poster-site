@@ -1,456 +1,228 @@
 /* ============================================================
-   AWCIM Information Navigator — Poster QR Landing Page
-   University of Arizona / Eller color palette
-   Navy: #003366   |   Red: #AB0520   |   White: #FFFFFF
+   AWCIM Information Navigator
+   Navy: #003366  |  Red: #AB0520  |  White: #FFFFFF
 ============================================================ */
 
-/* ---- Reset & Base ---- */
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --navy:      #003366;
-  --navy-dark: #002244;
-  --red:       #AB0520;
-  --red-dark:  #8B0018;
-  --white:     #FFFFFF;
-  --bg:        #F0F2F7;
-  --text:      #1A1A2E;
-  --muted:     #5A6275;
-  --border:    #DDE1EC;
-  --radius:    14px;
-  --shadow:    0 2px 16px rgba(0, 51, 102, 0.08);
-  --shadow-hover: 0 8px 28px rgba(0, 51, 102, 0.16);
-  --transition: 0.18s ease;
+  --navy:     #003366;
+  --red:      #AB0520;
+  --red-dark: #8B0018;
+  --white:    #FFFFFF;
+  --bg:       #F0F2F7;
+  --text:     #1A1A2E;
+  --muted:    #5A6275;
+  --border:   #DDE1EC;
+  --radius:   12px;
+  --shadow:   0 2px 16px rgba(0, 51, 102, 0.09);
+  --shadow-hover: 0 8px 28px rgba(0, 51, 102, 0.17);
 }
 
-html {
-  font-size: 16px;
-  -webkit-text-size-adjust: 100%;
-}
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-               'Helvetica Neue', Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.6;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-/* ============================================================
-   HEADER
-============================================================ */
+/* ---- Header ---- */
 header {
   background: var(--navy);
   color: var(--white);
-  padding: 2.5rem 2rem 3rem;
+  text-align: center;
+  padding: 2rem 1.5rem 2.25rem;
   position: relative;
 }
 
 header::after {
   content: '';
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 6px;
+  bottom: 0; left: 0; right: 0;
+  height: 5px;
   background: var(--red);
 }
 
-.header-inner {
-  max-width: 860px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  gap: 2.25rem;
-}
-
-.ua-logo {
-  width: 90px;
-  flex-shrink: 0;
-  filter: brightness(0) invert(1);
-  opacity: 0.92;
-}
-
-.header-text {
-  display: flex;
-  flex-direction: column;
-}
-
 .org-badge {
-  display: inline-flex;
-  align-self: flex-start;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 0.68rem;
+  display: inline-block;
+  font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  padding: 0.28rem 0.85rem;
-  border-radius: 999px;
-  margin-bottom: 0.9rem;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 0.6rem;
 }
 
 header h1 {
-  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  font-size: clamp(1.7rem, 5vw, 2.6rem);
   font-weight: 800;
+  letter-spacing: -0.02em;
   line-height: 1.1;
-  letter-spacing: -0.025em;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.3rem;
 }
 
 .subtitle {
-  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  font-size: clamp(0.85rem, 2.5vw, 1rem);
+  opacity: 0.72;
   font-weight: 400;
-  opacity: 0.82;
-  margin-bottom: 0.25rem;
 }
 
-.tagline {
-  font-size: 0.78rem;
-  font-weight: 500;
-  opacity: 0.55;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
-/* ============================================================
-   MAIN
-============================================================ */
+/* ---- Main ---- */
 main {
   flex: 1;
-  max-width: 860px;
+  max-width: 820px;
   width: 100%;
   margin: 0 auto;
-  padding: 2.75rem 1.5rem 3.5rem;
+  padding: 2rem 1.25rem 3rem;
 }
 
-/* ---- Overview strip ---- */
-.overview-strip {
-  display: flex;
-  background: var(--white);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  margin-bottom: 2.5rem;
-  overflow: hidden;
-  border-top: 4px solid var(--navy);
-}
-
-.overview-item {
-  flex: 1;
-  padding: 1.2rem 1.35rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-}
-
-.overview-label {
-  font-size: 0.63rem;
-  font-weight: 800;
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
-  color: var(--red);
-}
-
-.overview-text {
-  font-size: 0.8rem;
-  color: var(--muted);
-  line-height: 1.55;
-}
-
-.overview-divider {
-  width: 1px;
-  background: var(--border);
-  margin: 0.65rem 0;
-}
-
-/* ---- Intro ---- */
-.intro {
-  text-align: center;
-  color: var(--muted);
-  font-size: 0.92rem;
-  max-width: 480px;
-  margin: 0 auto 2rem;
-  line-height: 1.7;
-}
-
-/* ---- Section label ---- */
-.section-title {
-  text-align: center;
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--navy);
-  margin-bottom: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-}
-
-.section-title::before,
-.section-title::after {
-  content: '';
-  flex: 1;
-  max-width: 80px;
-  height: 1.5px;
-  background: var(--border);
-}
-
-/* ============================================================
-   TEAM GRID — strict 2 columns
-============================================================ */
+/* ---- Grid ---- */
 .team-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
-/* ============================================================
-   CARD — vertical, centered
-============================================================ */
+/* ---- Card ---- */
 .card {
   background: var(--white);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  padding: 2.25rem 1.75rem 2rem;
+  padding: 1.75rem 1.5rem 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   border-top: 4px solid var(--navy);
-  transition: transform var(--transition), box-shadow var(--transition),
-              border-top-color var(--transition);
+  transition: transform 0.17s ease, box-shadow 0.17s ease, border-top-color 0.17s ease;
 }
 
 .card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
   box-shadow: var(--shadow-hover);
   border-top-color: var(--red);
 }
 
-/* ---- Photo avatar ---- */
+/* ---- Photo ---- */
 .avatar-photo {
-  width: 96px;
-  height: 96px;
+  width: 82px;
+  height: 82px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid var(--border);
-  margin-bottom: 1.1rem;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border: 2.5px solid var(--border);
+  margin-bottom: 0.85rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-/* ---- Initials avatar (no photo yet) ---- */
+/* ---- Initials fallback ---- */
 .avatar {
-  width: 96px;
-  height: 96px;
+  width: 82px;
+  height: 82px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--navy) 60%, #004488);
+  background: var(--navy);
   color: var(--white);
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   font-weight: 700;
-  letter-spacing: 0.05em;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.1rem;
+  margin-bottom: 0.85rem;
   user-select: none;
 }
 
-/* ---- Card body ---- */
-.card-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-
-.card-body h2 {
-  font-size: 1.08rem;
+/* ---- Name ---- */
+.card h2 {
+  font-size: 1rem;
   font-weight: 700;
   color: var(--navy);
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.25rem;
   line-height: 1.25;
 }
 
+/* ---- Role ---- */
 .role {
-  font-size: 0.75rem;
+  font-size: 0.74rem;
   color: var(--muted);
-  margin-bottom: 1.25rem;
   line-height: 1.5;
+  margin-bottom: 1.1rem;
 }
 
-/* ---- Divider between name and button ---- */
-.card-divider {
-  width: 36px;
-  height: 2px;
-  background: var(--red);
-  border-radius: 2px;
-  margin: 0 auto 1.25rem;
-}
-
-/* ---- Buttons ---- */
-.btn-group {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  width: 100%;
-}
-
+/* ---- View Resume button — the hero element ---- */
 .btn-primary {
-  display: inline-block;
+  display: block;
+  width: 100%;
   background: var(--red);
   color: var(--white);
   text-decoration: none;
-  font-size: 0.88rem;
-  font-weight: 600;
-  padding: 0.6rem 1.75rem;
-  border-radius: 7px;
-  transition: background var(--transition), transform var(--transition),
-              box-shadow var(--transition);
-  white-space: nowrap;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  text-align: center;
+  transition: background 0.15s ease, transform 0.15s ease;
   -webkit-tap-highlight-color: transparent;
-  box-shadow: 0 2px 8px rgba(171, 5, 32, 0.25);
+  box-shadow: 0 3px 10px rgba(171, 5, 32, 0.28);
+  margin-top: auto;
 }
 
 .btn-primary:hover,
 .btn-primary:focus-visible {
   background: var(--red-dark);
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(171, 5, 32, 0.35);
 }
 
-.btn-primary:active {
-  transform: translateY(0);
-}
+.btn-primary:active { transform: translateY(0); }
 
-/* Coming Soon */
+/* ---- Coming Soon ---- */
 .btn-coming-soon {
-  display: inline-block;
+  display: block;
+  width: 100%;
   background: #EAEDF4;
   color: #9AA2B8;
-  font-size: 0.82rem;
+  font-size: 0.88rem;
   font-weight: 600;
-  padding: 0.55rem 1.5rem;
-  border-radius: 7px;
-  white-space: nowrap;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  text-align: center;
   cursor: default;
   user-select: none;
-  letter-spacing: 0.02em;
+  margin-top: auto;
 }
 
-/* LinkedIn / Portfolio (uncomment in HTML to use) */
-.btn-secondary {
-  display: inline-block;
-  background: transparent;
-  color: var(--navy);
-  text-decoration: none;
-  font-size: 0.78rem;
-  font-weight: 600;
-  padding: 0.45rem 1.25rem;
-  border-radius: 7px;
-  border: 1.5px solid var(--border);
-  transition: border-color var(--transition), background var(--transition),
-              color var(--transition);
-  white-space: nowrap;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.btn-secondary:hover,
-.btn-secondary:focus-visible {
-  border-color: var(--navy);
-  background: var(--navy);
-  color: var(--white);
-}
-
-/* ============================================================
-   FOOTER
-============================================================ */
+/* ---- Footer ---- */
 footer {
   text-align: center;
-  padding: 1.5rem 1rem 2rem;
-  font-size: 0.75rem;
+  padding: 1.25rem 1rem 1.75rem;
+  font-size: 0.72rem;
   color: var(--muted);
   border-top: 1px solid var(--border);
-  line-height: 1.9;
 }
 
-/* ============================================================
-   ACCESSIBILITY
-============================================================ */
+/* ---- Focus ---- */
 a:focus-visible {
   outline: 3px solid var(--red);
   outline-offset: 3px;
   border-radius: 5px;
 }
 
-/* ============================================================
-   RESPONSIVE
-============================================================ */
-
-/* Narrow desktop / large tablet */
-@media (max-width: 640px) {
-  main {
-    padding: 2rem 1.1rem 3rem;
+/* ---- Mobile ---- */
+@media (max-width: 480px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
   .card {
-    padding: 1.75rem 1.25rem 1.5rem;
-  }
-
-  .overview-strip {
-    flex-direction: column;
-  }
-
-  .overview-divider {
-    width: auto;
-    height: 1px;
-    margin: 0 1rem;
-  }
-}
-
-/* Mobile: single column */
-@media (max-width: 500px) {
-  header {
-    padding: 2rem 1.25rem 2.5rem;
-  }
-
-  .header-inner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.25rem;
-    text-align: left;
-  }
-
-  .ua-logo {
-    width: 70px;
-  }
-
-  .team-grid {
-    grid-template-columns: 1fr;
-    gap: 1.1rem;
-  }
-
-  .avatar-photo,
-  .avatar {
-    width: 84px;
-    height: 84px;
+    padding: 1.5rem 1.25rem 1.25rem;
   }
 
   .btn-primary,
-  .btn-coming-soon,
-  .btn-secondary {
-    font-size: 1rem;
-    padding: 0.7rem 2rem;
+  .btn-coming-soon {
+    font-size: 1.05rem;
+    padding: 0.8rem 1rem;
   }
 }
