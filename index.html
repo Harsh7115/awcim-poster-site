@@ -11,24 +11,47 @@
 
   <header>
     <div class="header-inner">
-      <span class="org-badge">Andrew Weil Center for Integrative Medicine &times; Eller</span>
-      <h1>Information Navigator</h1>
-      <p class="subtitle">AI-Powered Cancer Support Chatbot</p>
+      <img src="ua-logo.png" alt="The University of Arizona" class="ua-logo" />
+      <div class="header-text">
+        <span class="org-badge">Andrew Weil Center for Integrative Medicine &times; Eller</span>
+        <h1>Information Navigator</h1>
+        <p class="subtitle">AI-Powered Cancer Support Chatbot</p>
+        <p class="tagline">Your Helpful Navigator</p>
+      </div>
     </div>
   </header>
 
   <main>
 
+    <!-- Project overview strip -->
+    <div class="overview-strip">
+      <div class="overview-item">
+        <span class="overview-label">Problem</span>
+        <span class="overview-text">Cancer patients need quick, trustworthy information &amp; emotional support when clinicians aren't available.</span>
+      </div>
+      <div class="overview-divider"></div>
+      <div class="overview-item">
+        <span class="overview-label">Solution</span>
+        <span class="overview-text">An empathetic AI assistant delivering real-time guidance and evidence-based information via the Cancer Toolkit.</span>
+      </div>
+      <div class="overview-divider"></div>
+      <div class="overview-item">
+        <span class="overview-label">Key Benefit</span>
+        <span class="overview-text">24/7 availability with verified sources and empathetic, evidence-based responses.</span>
+      </div>
+    </div>
+
     <p class="intro">
-      This page provides quick access to the resumes of the student team
-      behind the AWCIM Information Navigator project.
+      Meet the student team behind the AWCIM Information Navigator.
+      Tap a card to view their resume.
     </p>
 
     <!-- ============================================================
          TEAM CARDS
          Folder structure: team/<name>/photo.jpg + team/<name>/resume.pdf
          To add a photo: place photo.jpg inside the person's team folder.
-         To add a resume: place resume.pdf and swap btn-coming-soon → btn-primary.
+         To activate a resume: place resume.pdf and swap btn-coming-soon
+         for btn-primary with the correct href.
          To add LinkedIn: uncomment the .btn-secondary block and update href.
     ============================================================ -->
     <h2 class="section-title">Meet the Team</h2>
@@ -44,15 +67,13 @@
         />
         <div class="card-body">
           <h2>Harsh Jain</h2>
-          <p class="role">BS in Computer Science, Minor in Software Engineering<br>May 2026</p>
+          <p class="role">BS in Computer Science<br>Minor in Software Engineering<br>May 2026</p>
           <div class="card-divider"></div>
           <div class="btn-group">
             <a href="team/harsh-jain/resume.pdf"
                class="btn-primary"
                target="_blank"
-               rel="noopener noreferrer">
-              View Resume
-            </a>
+               rel="noopener noreferrer">View Resume</a>
             <!--
             <a href="https://linkedin.com/in/HARSH-USERNAME"
                class="btn-secondary"
@@ -79,9 +100,7 @@
             <a href="team/anirudha-soni/resume.pdf"
                class="btn-primary"
                target="_blank"
-               rel="noopener noreferrer">
-              View Resume
-            </a>
+               rel="noopener noreferrer">View Resume</a>
             <!--
             <a href="https://linkedin.com/in/ANIRUDHA-USERNAME"
                class="btn-secondary"
@@ -120,7 +139,9 @@
       </article>
 
       <!-- CARD: Shri Pooja Challagulla — resume coming soon -->
-      <!-- When resume is ready: add resume.pdf to team/shri-pooja-challagulla/ and swap btn-coming-soon → btn-primary with correct href -->
+      <!-- When ready: add photo.jpg + resume.pdf to team/shri-pooja-challagulla/,
+           replace <div class="avatar"> with <img class="avatar-photo">,
+           and swap btn-coming-soon for btn-primary. -->
       <article class="card">
         <div class="avatar" aria-hidden="true">SPC</div>
         <div class="card-body">
@@ -147,8 +168,8 @@
   </main>
 
   <footer>
-    <p>Information Navigator &mdash; Spring 2026</p>
-    <p>Andrew Weil Center for Integrative Medicine &times; Eller College of Management, University of Arizona</p>
+    <p>Information Navigator &mdash; Fall 2025 &nbsp;&middot;&nbsp; Client: Andrew Weil Center for Integrative Medicine</p>
+    <p>Eller College of Management &times; University of Arizona &nbsp;&middot;&nbsp; September &ndash; November 2025</p>
   </footer>
 
 </body>

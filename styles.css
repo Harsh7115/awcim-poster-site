@@ -49,20 +49,8 @@ body {
 header {
   background: var(--navy);
   color: var(--white);
-  padding: 3rem 1.5rem 3.25rem;
-  text-align: center;
+  padding: 2.5rem 2rem 3rem;
   position: relative;
-}
-
-/* Double accent bar: thin red over slightly thicker navy */
-header::before {
-  content: '';
-  position: absolute;
-  bottom: 6px;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: rgba(255, 255, 255, 0.12);
 }
 
 header::after {
@@ -76,39 +64,62 @@ header::after {
 }
 
 .header-inner {
-  max-width: 680px;
+  max-width: 860px;
   margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 2.25rem;
+}
+
+.ua-logo {
+  width: 90px;
+  flex-shrink: 0;
+  filter: brightness(0) invert(1);
+  opacity: 0.92;
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
 }
 
 .org-badge {
   display: inline-flex;
+  align-self: flex-start;
   align-items: center;
-  gap: 0.4rem;
   background: rgba(255, 255, 255, 0.1);
   color: rgba(255, 255, 255, 0.85);
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  padding: 0.3rem 1rem;
+  padding: 0.28rem 0.85rem;
   border-radius: 999px;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.9rem;
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 header h1 {
-  font-size: clamp(2rem, 6vw, 3.1rem);
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.025em;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.35rem;
 }
 
 .subtitle {
-  font-size: clamp(0.95rem, 2.8vw, 1.2rem);
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
   font-weight: 400;
   opacity: 0.82;
-  letter-spacing: 0.01em;
+  margin-bottom: 0.25rem;
+}
+
+.tagline {
+  font-size: 0.78rem;
+  font-weight: 500;
+  opacity: 0.55;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 /* ============================================================
@@ -122,13 +133,52 @@ main {
   padding: 2.75rem 1.5rem 3.5rem;
 }
 
+/* ---- Overview strip ---- */
+.overview-strip {
+  display: flex;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 2.5rem;
+  overflow: hidden;
+  border-top: 4px solid var(--navy);
+}
+
+.overview-item {
+  flex: 1;
+  padding: 1.2rem 1.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.overview-label {
+  font-size: 0.63rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--red);
+}
+
+.overview-text {
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.overview-divider {
+  width: 1px;
+  background: var(--border);
+  margin: 0.65rem 0;
+}
+
 /* ---- Intro ---- */
 .intro {
   text-align: center;
   color: var(--muted);
-  font-size: 0.95rem;
-  max-width: 560px;
-  margin: 0 auto 2.75rem;
+  font-size: 0.92rem;
+  max-width: 480px;
+  margin: 0 auto 2rem;
   line-height: 1.7;
 }
 
@@ -348,7 +398,7 @@ a:focus-visible {
    RESPONSIVE
 ============================================================ */
 
-/* Narrow desktop / large tablet: tighten padding */
+/* Narrow desktop / large tablet */
 @media (max-width: 640px) {
   main {
     padding: 2rem 1.1rem 3rem;
@@ -357,12 +407,33 @@ a:focus-visible {
   .card {
     padding: 1.75rem 1.25rem 1.5rem;
   }
+
+  .overview-strip {
+    flex-direction: column;
+  }
+
+  .overview-divider {
+    width: auto;
+    height: 1px;
+    margin: 0 1rem;
+  }
 }
 
 /* Mobile: single column */
 @media (max-width: 500px) {
   header {
-    padding: 2.25rem 1rem 2.75rem;
+    padding: 2rem 1.25rem 2.5rem;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+    text-align: left;
+  }
+
+  .ua-logo {
+    width: 70px;
   }
 
   .team-grid {
